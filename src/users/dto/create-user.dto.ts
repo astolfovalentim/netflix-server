@@ -29,7 +29,7 @@ export class CreateUserDto {
 
   @ApiProperty({
     description: 'User`s password',
-    example: '@As123456',
+    example: '@Abc123456',
   })
   @IsString()
   @IsNotEmpty()
