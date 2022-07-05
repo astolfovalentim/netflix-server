@@ -13,6 +13,7 @@ async function bootstrap() {
     .setDescription('Aplicação de streaming de filmes')
     .setVersion('1.0.0')
     .addTag('status')
+    .addTag('users')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
