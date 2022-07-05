@@ -21,18 +21,114 @@
 </p>
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# NETFLIX SERVER - Projeto do MÓDULO 5
 
-## Description
+O projeto é inspirado na Netflix, plataforma de streaming de filmes e séries.
+O objetivo é criar uma API backend com usuários, perfis, filmes e gêneros para que usuários possam se cadastrar, selecionar diferentes perfis (semelhante ao sistema de perfis da Netflix) e acessar os filmes disponíveis.
+Assim que o login for feito, a tela principal exibirá os filmes disponíveis, seguindo os exemplos a seguir. É possível favoritar os filmes, sendo que a lista de filmes favoritos é individual para cada perfil. Esses filmes irão compor a primeira sessão da página, sob o título de "filmes Favoritos". Logo após essa seção, temos as seções dos outros filmes, classificados por gênero.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Pré-requisitos
 
-## Installation
+Backend com a estrutura básica seguinte:
+
+API backend com usuários, perfis, filmes e gêneros.
+
+- Estrutura da Entidade: Usuários (Users)
+- Name;
+- Email;
+- Password;
+- CPF;
+- isAdmin;
+
+Estrutura da Entidade: Perfis (Profiles)
+
+- Title;
+- ImageURL;
+- Estrutura da Entidade: filmes (Movies)
+- Title;
+- CoverImageUrl;
+- Description;
+- Year;
+- ImdbScore (0 a 5);
+- TrailerYouTubeUrl;
+
+Estrutura da Entidade: Gêneros (Genres)
+
+- Name;
+- Relações
+- Um usuário x muitos perfis;
+- Muitos filmes x muitos gêneros;
+- Muitos perfis x muitos filmes (filmes favoritos);
+
+Endpoints
+
+- [Create] Usuários (não precisa de autenticação);
+- [AUTH] [GET] Homepage: lista de filmes favoritos; lista de filmes, classificados por gênero;
+- [AUTH] [CRUD] Perfis; Favoritar jogo;
+- [AUTH] [ADMIN] [CRUD] Usuários (apenas admins podem gerenciar usuários);
+- [AUTH] [ADMIN] [CRUD] filmes (apenas admins podem criar filmes);
+- [AUTH] [ADMIN] [CRUD] Gêneros (apenas admins podem criar gêneros).
+
+Requisitos
+
+- Validação de dados em todos os endpoints com class-validator;
+- Status Code corretos em todos os endpoints:
+- 200, 201, 400, 404, etc.
+- Persistência de Dados no SQL com Prisma;
+- Formatação do código utilizando o Prettier/ESLint;
+- Documentação dos endpoints com Swagger;
+- Diagrama de relacionamentos do banco de dados;
+- Cors habilitado;
+- Deploy do projeto;
+- Deploy do banco de dados.
+
+É obrigatório estar previamente instalado:
+
+> - **Node** com versão superior ou igual que 16.15.0 - [Node Download](https://nodejs.org/pt-br/download/)
+> - **NPM** com versão superior ou igual que 8.0.0 - [Npm Download](https://www.npmjs.com/package/download)
+> - **Visual Studio Code** com versão superior ou igual que 1.67.2 - [Visual Studio Code Download](https://code.visualstudio.com/download)
+> - **Thunder Client** com versão superior ou igual que 11.14.00 - [Thunder Client Download](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client)
+> - **PostgreSQL** com versão superior ou igual que 1.67.2 - [PostgreSQL Downloads](https://www.postgresql.org/download/)
+
+## Instalação
+
+Link da branch do projeto no github
+
+```bash
+https://github.com/astolfovalentim/netflix-server.git
+```
+
+> Acesse a pasta do projeto seu terminal:
+
+```bash
+ 	cd [Nome da pasta do seu projeto]
+```
+
+> Instalação - digite o seguinte comando:
 
 ```bash
 $ npm install
 ```
 
+<<<<<<< HEAD
+
+## Clone
+
+```bash
+$ git clone https://github.com/astolfovalentim/netflix-server.git
+```
+
 ## Running the app
+
+=======
+
+> Instalação -do NestJS CLI:
+
+```bash
+$ npm i -g @nestjs/cli
+```
+
+## Execução
 
 ```bash
 # development
@@ -45,29 +141,26 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+> A aplicação estará disponível para visualização em seu navegador, caso isso não aconteça automaticamente, abra o navegador no seguinte endereço: _localhost:3000_
+
+## Swagger
+
+Todas as rotas estão no swagger
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+https://netflix-server.herokuapp.com/api/
 ```
 
-## Support
+## PrismaStudio
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+http://localhost:5555/
+```
 
-## Stay in touch
+## Autor
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+> - **Astolfo Valentim** - [Github](https://github.com/astolfovalentim)
 
-## License
+## Licença
 
-Nest is [MIT licensed](LICENSE).
+> MIT License (MIT)
