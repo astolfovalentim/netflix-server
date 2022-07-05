@@ -148,7 +148,7 @@ $ npm run start:prod
 Todas as rotas estão no swagger
 
 ```bash
-https://netflix-server.herokuapp.com/api/
+https://netflix-server-back.herokuapp.com/
 ```
 
 ## PrismaStudio
