@@ -141,7 +141,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-> A aplicação estará disponível para visualização em seu navegador, caso isso não aconteça automaticamente, abra o navegador no seguinte endereço: _localhost:3000_
+> A aplicação estará disponível para visualização em seu navegador, caso isso não aconteça automaticamente, abra o navegador no seguinte endereço: _localhost:3333_
 
 ## Swagger
 

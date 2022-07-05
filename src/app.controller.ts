@@ -20,6 +20,6 @@ export class AppController {
     summary: 'Display status of aplication',
   })
   getStatus() {
-    return this.appService.getStatus('http://localhost:3000');
+    return this.appService.getStatus('http://localhost:3333');
   }
 }
