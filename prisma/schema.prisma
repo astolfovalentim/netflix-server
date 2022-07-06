@@ -10,15 +10,53 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id       String  @id @default(uuid())
+  name     String
+  email    String  @unique
+  password String
+  CPF      String  @unique
+  isAdmin  Boolean @default(false)
 
-model User{
-  id              String  @id @default(uuid())
-  name            String
-  email           String  @unique
-  password        String
-  CPF             String  @unique
-  isAdmin         Boolean @default(false)
+  profiles Profile[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Profile {
+  id       String @id @default(uuid())
+  title    String
+  imageURL String
   
+  user      User    @relation(fields: [userId], references: [id])
+  userId   String @map("userId")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Movie {
+  id                String @id @default(uuid())
+  Title             String @unique
+  CoverImageURL     String
+  Description       String
+  Year              Int
+  ImdbScore         Int
+  TrailerYouTubeUrl String
+
+  Genres Genre[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Genre {
+  id   String @id @default(uuid())
+  Name String @unique
+
+  Movies Movie []
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
