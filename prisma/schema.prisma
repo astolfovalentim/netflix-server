@@ -32,7 +32,7 @@ model Profile {
   user   User   @relation(fields: [userId], references: [id])
   userId String @map("userId")
 
-  ProfileMovies ProfileMovie[]
+  profileMovies ProfileMovie[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -40,15 +40,15 @@ model Profile {
 
 model Movie {
   id                String @id @default(uuid())
-  Title             String @unique
-  CoverImageURL     String
-  Description       String
-  Year              Int
-  ImdbScore         Int
-  TrailerYouTubeUrl String
+  title             String @unique
+  coverImageURL     String
+  description       String
+  year              Int
+  imdbScore         Int
+  trailerYouTubeUrl String
 
-  Genres        Genre[]
-  ProfileMovies ProfileMovie[]
+  genres        Genre[]
+  profileMovies ProfileMovie[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -56,9 +56,9 @@ model Movie {
 
 model Genre {
   id   String @id @default(uuid())
-  Name String @unique
+  name String @unique
 
-  Movies Movie[]
+  movies Movie[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
